@@ -14,6 +14,8 @@
       </li>
     </ul>
     <ul class="main-header__item-list">
+      <% if(isAuth)  { %> 
+
       <li class="main-header__item">
         <a class="<%= path === '/admin/add-product' ? 'active' : '' %>"href="/admin/add-product">Add Product</a>
       </li>
@@ -21,9 +23,18 @@
         <a class="<%= path === '/products' ? 'active' : '' %>" href="/admin/products">Products (Admin)</a>
       </li>
       <li class="main-header__item">
+       <form action="/logout" method="POST">
+        <button type="submit">Logout</button>
+      </form>
+      </li>
+      <% } %>
+      <li class="main-header__item">
         <a class="<%= path === '/login' ? 'active' : '' %>" href="/login"
-          >Login</a
-        >
+          >Login</a>
+      </li>
+      <li class="main-header__item">
+        <a class="<%= path === '/login' ? 'active' : '' %>" href="/signup"
+          >Sign Up</a>
       </li>
     </ul>
   </nav>
